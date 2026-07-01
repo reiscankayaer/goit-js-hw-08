@@ -1,0 +1,39 @@
+/* Galeri Konteyneri: 3 sütunlu Grid (Izgara) düzeni */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px; /* Resimler arası boşluk */
+  list-style: none; /* Yanlardaki madde işaretlerini (noktaları) kaldırır */
+  max-width: 1128px; /* İçeriği ortalamak için maksimum genişlik */
+  margin: 24px auto; /* Üstten/alttan boşluk ve yatayda ortalama */
+  padding: 0;
+}
+
+/* Her bir galeri kartı */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 4px; /* Köşeleri hafif yumuşatır */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+}
+
+/* Link elementinin blok seviyesinde davranmasını sağlar */
+.gallery-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* Resimlerin boyutlandırılması ve Hover animasyonu hazırlığı */
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 240px; /* Resimlerin hepsini aynı yükseklikte sabitler */
+  object-fit: cover; /* Resimlerin en-boy oranını bozmadan kutuyu doldurmasını sağlar */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Yumuşak geçiş efekti */
+}
+
+/* Mouse ile resmin üzerine gelindiğinde (Hover) çalışacak efekt */
+.gallery-image:hover {
+  transform: scale(1.04); /* Resmi %4 büyütür */
+  cursor: pointer;
+}
